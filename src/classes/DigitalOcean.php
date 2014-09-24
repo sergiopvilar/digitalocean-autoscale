@@ -15,15 +15,28 @@ class DigitalOcean {
         $this->token = $token;
     }
 
-    public function makeRequest($url){
+    public function get($url){
+        return $this->makeRequest($url, true);
+    }
+
+    public function post($url){
+        return $this->makeRequest($url, false);
+    }
+
+    private function makeRequest($url, $get = false){
 
         $ch = curl_init(self::API_URL.$url);
+        $headers = array('Authorization: Bearer '.$this->token);
+
+        if(!$get){
+
+            $headers[] = 'Content-Type: application/x-www-form-urlencoded';
+            curl_setopt($ch,CURLOPT_POST, 0);
+
+        }
 
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-
-        curl_setopt($ch, CURLOPT_HTTPHEADER, array(
-            'Authorization: Bearer '.$this->token
-        ));
+        curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
 
         $resultado = curl_exec($ch);
         curl_close($ch);

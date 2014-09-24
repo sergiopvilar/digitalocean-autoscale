@@ -51,7 +51,7 @@ class ScaleManager {
 
     private function getDroplet(){
 
-        $droplets = $this->api->makeRequest('/droplets');
+        $droplets = $this->api->get('/droplets');
         $my_droplet = null;
 
         foreach($droplets->droplets as $droplet){
