@@ -6,7 +6,7 @@
  * Time: 4:40 PM
  */
 
-class ServerMananger {
+class ServerManager {
 
     private $config;
     private $api;
