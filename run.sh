@@ -1,0 +1,1 @@
+nohup php src/initialize.php > out.txt 2> err.txt < /dev/null
