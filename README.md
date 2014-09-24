@@ -4,7 +4,7 @@ DigitalOcean Autoscale is a tool to automatic scale your infrastructure on Digit
 
 # How it works
 
-DigitalOcean Autoscale runs in a master server that can be used as LoaBalance too. The service will check in every 5 minutes the server's health, if the CPU usage average is bigger than 80%, DG AutoScale will create a new droplet and register in the LoadBalance. If the CPU usage average is lower than 20%, the service will down one droplet.
+DigitalOcean Autoscale runs in a master server that can be used as LoaBalance too. The service will check in every 5 minutes the server's health, if the CPU usage average is more than 80%, DG AutoScale will create a new droplet and register in the LoadBalance. If the CPU usage average is lower than 20%, the service will down one droplet.
 
 # Installation
 
