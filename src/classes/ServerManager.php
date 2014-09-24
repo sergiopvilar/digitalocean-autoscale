@@ -23,7 +23,7 @@ class ServerManager {
         while(true){
 
             $this->checkDroplets();
-            sleep(self::UPDATE_TIME);
+            sleep(self::UPDATE_TIME * 60);
 
         }
 
@@ -74,11 +74,13 @@ class ServerManager {
         $servers = "";
 
         foreach($droplets as $droplet){
-            $servers .= $droplet->networks->v4[0]->ip_address. ";\n";
+            $servers .= "server ".$droplet->networks->v4[0]->ip_address. ";\n";
         }
 
         $str = str_replace('${servers}', $servers, $file);
         file_put_contents($lb_location, $str);
+
+        shell_exec("service nginx restart");
 
     }
 
