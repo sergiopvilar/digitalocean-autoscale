@@ -1,0 +1,12 @@
+{
+    "name": "sergiovilar/do-autoscale",
+    "authors": [
+        {
+            "name": "Sergio Vilar",
+            "email": "vilar@me.com"
+        }
+    ],
+    "autoload": {
+        "classmap": ["src"]
+    }
+}

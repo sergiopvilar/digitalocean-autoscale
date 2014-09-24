@@ -1,0 +1,24 @@
+{
+
+	"config":{
+
+		"token": "YOUR_TOKEN",
+        "app_id": "YOUR_DOMAIN",
+
+		"boxes": [
+			{
+				"name": "application",
+				"source": "git@github.com:user/puphpet_box.git"
+			}
+
+		]
+
+	},
+
+	"boxes":{
+
+		"application": "scalable"
+
+	}
+
+}
